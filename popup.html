@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<head>
+    <title>Pop-up Example</title>
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <style>
+/*// POP-UP BASE STYLES //*/
+        *{
+            font-family: calibri, sans-serif;
+            font-weight: normal;
+            color: #333;
+        }
+        body{
+            position: relative;
+            margin: 0;
+            background: #222;
+        }
+        /* .pop-up{background: #222;} */
+        h1{
+            font-size: 48px;
+            margin: 10px 0;
+        }
+        p{margin-bottom: 40px;}
+        #pop-up{
+            position: relative;
+            top: 100px;
+            width: 500px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .container{
+            background: #f0e4d4;
+            padding: 30px;
+            position: absolute;
+            top: 50px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .container input{
+            padding: 10px;
+            border: 1px solid #333;
+            border-radius: 10px 0 0 10px;
+            font-size: 18px;
+        }
+        button{
+            padding: 10px;
+            color: #fff;
+            background: #333;
+            margin-left: -5px;
+            border: 1px solid #333;
+            border-radius: 0 10px 10px 0;
+            font-size: 18px;
+        }
+        .cross{
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            color: #ddd;
+            background: #555;
+            font-weight: bold;
+            width: 22px;
+            height: 22px;
+            text-align: center;
+            border-radius: 11px;
+        }
+
+/*// POP-UP ANIMATION STYLES //*/
+#pop-up{
+    top: -400px;
+    animation: drop 700ms 300ms ease forwards, 
+    swing 2000ms 2000ms ease forwards, 
+    reset 2000ms 6000ms ease forwards;
+    transform-origin: 5% 5%;
+}
+@keyframes drop{
+    0%{ transform: translateY(-400px); opacity: 0;}
+    70%{ transform: translateY(550px); opacity: 0.5;}
+    100%{ transform: translateY(500px); opacity: 1;}
+}
+@keyframes swing{
+    0%{transform: translateY(500px) rotateZ(0deg)}
+    40%{transform: translateY(500px) rotateZ(90deg)}
+    70%{transform: translateY(500px) rotateZ(70deg)}
+    100%{transform: translateY(500px) rotateZ(75deg)}
+}
+@keyframes reset{
+    0%{ transform: translateY(500px) rotateZ(75deg)}
+    100%{ transform: translateY(500px) rotateZ(0deg)}
+}
+/* @keyframes rotate{
+    0%{ transform: translateY(500px) rotateZ(0deg)}
+    100%{ transform: translateY(500px) rotateZ(360deg)}
+} */
+/*// BASKET BASE STYLES //*/
+
+
+/*// BASKET ANIMATION STYLES //*/
+
+    </style>
+</head>
+<body class="pop-up">
+    <div id="pop-up">
+        <img src="https://raw.githubusercontent.com/iamshaunjp/css-animations-playlist/master/web-examples/img/ninja.png">
+        <div class="container">
+            <h1>Get ready to rumble</h1>
+            <p>Join the mailing list to be spammed with useless explict content</p>
+            <input type="email" placeholder="Email" required>
+            <button>Hit it!</button>
+            <div class="cross">x</div>
+        </div>
+    </div>
+</body>
